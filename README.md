@@ -5,7 +5,7 @@
 * cron Cron类，命名空间PHPCron，里面实现了任务操作，如读取、添加、更新、删除~~、激活、运行~~等
 	- Cron.Class.php 类
 	- CronConfig.php 类 对主线程的配置操作
-	- ~~cron.php 用来激活和调用的入口文件~~  ThinkCron.php 对主线程的各种操作
+	- ~~cron.php 用来激活和调用的入口文件~~  ThinkCron.php 对cron的各种操作
 	- cron.log 用来记录动作的log文件
 * schedules 任务列表，添加的任务会以~~"任务名.php"~~ "任务名.json"的格式保存在这个文件夹内，任务信息将会序列化保存，反序列化后就是一个数组
 * ~~demo 用来演示使用Cron的效果文件~~
@@ -19,9 +19,6 @@
 use ThinkCron;
 $thinkCron = new ThinkCron();
 ```
-
-## 主线程
-
 > 启动
 
 ```php
@@ -64,6 +61,14 @@ ThinkCron::taskUpdate($name, $interval, $path);
 
 ```php
 ThinkCron::taskDelete($name);
+```
+
+## 其他
+
+> 获取配置
+
+```php
+ThinkCron::getConfig();
 ```
 
 
