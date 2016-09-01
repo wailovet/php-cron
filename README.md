@@ -42,5 +42,29 @@ $thinkCron->isRun();
 $thinkCron->clean();
 ```
 
+### 任务操作
+
+> 任务列表
+
+```php
+ThinkCron::task();
+```
+> 添加
+
+```php
+ThinkCron::taskAdd($name, $interval, $path); //$interval 单位ms
+```
+> 修改
+
+```php
+ThinkCron::taskUpdate($name, $interval, $path); 
+```
+> 删除
+
+```php
+ThinkCron::taskDelete($name);
+```
+
+
  
 
