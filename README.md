@@ -13,14 +13,15 @@
 
 ## 使用
 
-### 主线程
-
 > 初始化
 
 ```php
 use ThinkCron;
 $thinkCron = new ThinkCron();
 ```
+
+## 主线程
+
 > 启动
 
 ```php
@@ -42,7 +43,7 @@ $thinkCron->isRun();
 $thinkCron->clean();
 ```
 
-### 任务操作
+## 任务操作
 
 > 任务列表
 
