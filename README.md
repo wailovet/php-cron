@@ -9,5 +9,38 @@
 	- cron.log 用来记录动作的log文件
 * schedules 任务列表，添加的任务会以~~"任务名.php"~~ "任务名.json"的格式保存在这个文件夹内，任务信息将会序列化保存，反序列化后就是一个数组
 * ~~demo 用来演示使用Cron的效果文件~~
+
+
+## 使用
+
+### 主线程
+
+> 初始化
+
+```php
+use ThinkCron;
+$thinkCron = new ThinkCron();
+```
+> 启动
+
+```php
+$thinkCron->start();
+```
+> 停止
+
+```php
+$thinkCron->stop();
+```
+> 运行状态
+
+```php
+$thinkCron->isRun();
+```
+> 重置配置
+
+```php
+$thinkCron->clean();
+```
+
  
 
