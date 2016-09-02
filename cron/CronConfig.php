@@ -24,7 +24,9 @@ class CronConfig
     {
         if (!file_exists($this->path)) {
             file_put_contents($this->path, json_encode(array(
-                "interval" => 1000
+                "interval" => 1000,
+                "last_time" => time(),
+                "run_ing" => 0
             )));
         }
     }
