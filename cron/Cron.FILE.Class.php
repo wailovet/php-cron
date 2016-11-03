@@ -31,7 +31,7 @@ class Cron
         return true;
     }
 
-    // 获取某个任务的信息
+    // 获取某个任务的信息 //
     function get($name = null)
     {
         // 为空是，获取任务列表
