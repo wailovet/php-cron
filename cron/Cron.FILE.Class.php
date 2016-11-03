@@ -31,9 +31,17 @@ class Cron
         return true;
     }
 
-    // 获取某个任务的信息 //
+    // 获取某个任务的信息
+    function get_basename($filename)
+    {
+        $str = preg_replace('/^.+[\\\\\\/]/', '', $filename);;
+        $str = explode(".", $str);
+        return $str[0];
+    }
+
     function get($name = null)
     {
+
         // 为空是，获取任务列表
         if (empty($name)) {
             $schedules_files = $this->_scandir($this->schedules_dir);
@@ -42,7 +50,7 @@ class Cron
                 if ($file == '.' || $file == '..') {
                     continue;
                 }
-                $schedules[] = basename($file, '.json');
+                $schedules[] = $this->get_basename($file);
             }
             return $schedules;
         }
